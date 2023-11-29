@@ -1,20 +1,117 @@
 :root {
-    --coral: #F05D5E;
-    --teal: #0F7173;
-    --light: #E7ECEF;
-    --dark: #272932;
-    --camel: #D8A47F;
+  --coral: #f05d5e;
+  --teal: #0f7173;
+  --light: #e7ecef;
+  --dark: #272932;
+  --camel: #d8a47f;
 }
 
 body {
-    background-color: var(--light);
+  background-color: var(--light);
+  font-family: sans-serif;
+  font-size: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.description {
+  max-width: 65ch;
+  font-size: 1.5rem;
 }
 
 .card {
-    padding: 10px;
-    margin: 10px;
+  display: flex;
+  flex-direction: column;
+  border: solid #d5d5d5 thin;
+  box-shadow: 0.2em 0.2em 0.2em rgba(0, 0, 0, 0.2);
+  position: relative;
+  border-radius: 0.25em;
+  --card-padding: 0.5em;
+
+  & .cat-name {
+    padding: 0 var(--card-padding);
+  }
+
+  & .pet-pic {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  & .card-body {
+    font-size: 1.2rem;
+    padding: var(--card-padding);
+  }
 }
 
-img {
-    width: 250px;
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(auto-fill, minmax(100px, 1fr));
+  margin: auto;
+  gap: 1rem;
+  margin-bottom: 4rem;
+
+  @media (min-width: 768px) {
+    &:not(.cols-1) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &:not(.cols-1, .cols-2) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    &:not(.cols-1, .cols-2, .cols-3) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    &:not(.cols-1, .cols-2, .cols-3, .cols-4) {
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+  }
+}
+
+.container {
+  max-width: calc(100% - 1rem);
+  margin: auto;
+
+  &.full {
+    max-width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    & {
+      max-width: calc(768px - 1rem);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    & {
+      max-width: calc(1024px - 1rem);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    & {
+      max-width: 1280px;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    & {
+      max-width: 1536px;
+    }
+  }
 }
