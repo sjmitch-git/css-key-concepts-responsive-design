@@ -117,7 +117,7 @@ const cats = [
     favFoods: ["baked bean juice"],
     birthYear: 2016,
     photo:
-      "https://metro.co.uk/wp-content/uploads/2020/05/PRI_150473631-e1588316954238.jpg?quality=90&strip=all",
+      "https://img.freepik.com/free-photo/cute-domestic-kitten-sits-window-staring-outside-generative-ai_188544-12519.jpg",
   },
 ];
 
@@ -131,6 +131,7 @@ const cats = [
   for (let i = 0; i < cats.length; i++) {
     petNames[i].innerText = cats[i].name;
     petImage[i].src = cats[i].photo;
+    petImage[i].alt = `Image of a cat nammed ${cats[i].name}`;
     favFoods[i].innerText = `Favourite foods: ${cats[i].favFoods.map((food) => food).join(", ")}`;
     birthYear[i].innerText = `Birth Year: ${cats[i].birthYear}`;
     species[i].innerText = `Species: ${cats[i].species}`;
